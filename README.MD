@@ -20,7 +20,8 @@ every 20 ticks do
     input dirt from chest_a
         -- 'output' is another required keyword. it tries to place marked things to the target inventory. 
         output to chest_b
-            -- 'forget' is forgets all marked before things and inputs. it's not necessary, but you want it if you write more than example. just get used to using it after each operation.
+            -- 'forget' is forgets all marked before things and inputs. it's not necessary, but you want it if you write more than example. 
+            -- just get used to using it after each operation.
             forget
     -- and finish the main loop
 end
@@ -98,7 +99,8 @@ every 20 ticks do
     -- and last take some obsidian...
     input obsidian from chest_a
         -- and put it in the last chest
-        -- remember? you don't forget a cobby from chest_a, dirt from chest_c, and EVERY items in chest_a (yes, there is collision in the input marks, but SFM is stupid enough to ignore it)
+        -- remember? you don't forget a cobby from chest_a, dirt from chest_c, and EVERY items in chest_a 
+        ---- (yes, there is collision in the input marks, but SFM is stupid enough to ignore it)
         -- and yes, put everything from chest_a, dirt from chest_c (don't care a cobblestone, it's count as everything)
         -- and there is no limits, it puts every available item stack to every available free/partial slot
         output to chest_x
@@ -117,7 +119,8 @@ every 20 ticks do
         output to meka_infuser_red left side
             forget
     -- also take some iron ingots, and put it to the RIGHT side, which is configured as 'INPUT'
-    -- if the interface/inventory can provide more than one stack at the same tick, and you using a meka factory, this will put all available iron ingots to all available machine slots!
+    -- if the interface/inventory can provide more than one stack at the same tick, and you using a meka factory, 
+    ---- this will put all available iron ingots to all available machine slots!
     input iron_ingot from labeled_interface
         output to meka_infuser_red right side
             forget
@@ -145,7 +148,8 @@ every 20 ticks do
         output fe:: to each power_consumer each side
             forget
     -- take some oxy gas. don't forget to specify a side 
-    -- also small tip: almost every Meka machine can be configured to 'input/output' to the top side, and to every thing type: top in/out items, top in/out gases, etc. just don't forget to disable ejection is you will stack the machines!
+    -- also small tip: almost every Meka machine can be configured to 'input/output' to the top side, and to every thing type: top in/out items, top in/out gases, etc. 
+    -- just don't forget to disable ejection is you will stack the machines!
     input gas::oxygen from labeled_meka_separator top side
         -- to the destination you must specify only the thing type, it's unnecessary to specify the id...
         output gas:: to labeled_meka_prc
